@@ -1,5 +1,7 @@
 import { combineReducers} from 'redux';
+import { authReducer } from './authReduce';
+
 
 export default combineReducers({
-    replace: ()=>"test reduce"
+   signedIn: authReducer
 })

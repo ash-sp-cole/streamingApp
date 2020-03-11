@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap';
-
+import {connect} from 'react-redux';
 import { FaGoogle } from 'react-icons/fa';
 
 
@@ -67,6 +67,7 @@ this.auth.signOut();
 }
 
     render() {
+        console.log(this.props.propIsSignedIn)
         return (
             <div>
                 <h3>{this.renderAuthButton()}</h3>
@@ -78,4 +79,24 @@ this.auth.signOut();
 
 
 }
-export default GoogleAuth;
+
+ const mapStatetoProps =  (state) => {
+return {
+propIsSignedIn: state.signedIn
+}
+
+}
+
+const mapDispatchToProps = () =>{
+    return{
+        
+
+    }
+}
+
+
+
+
+
+
+export default connect(mapStatetoProps,mapDispatchToProps) (GoogleAuth);
