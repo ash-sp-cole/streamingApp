@@ -18,15 +18,24 @@ class GoogleAuth extends Component {
                 this.setState({
                     isSignedIn: this.auth.isSignedIn.get()
                 })
+                this.auth.isSignedIn.listen(this.authChange);
                 console.log(this.state.isSignedIn)
             })
 
         })
     }
 
+   
+authChange = () =>{
+this.setState({
+    isSignedIn: this.auth.isSignedIn.get()
+})
+
+}
+
     renderAuthButton() {
         if (this.state.isSignedIn === null) {
-            return <div><h4> null</h4></div>
+            return <div></div>
         }
         else if (this.state.isSignedIn === true) {
             return <div> <h3> is signed in</h3> </div>;
