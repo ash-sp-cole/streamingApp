@@ -7,6 +7,8 @@ import Delete from './components/streams/Delete';
 import Home from './components/streams/streamHome';
 import About from './components/streams/About';
 import NavHeader from './components/NavBar';
+
+import "./app.css";
 const App = () => {
   
   

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Navbar, Button, Form, FormControl, NavDropdown, Nav} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import GoogleAuth from './GoogleAuth';
-
+import '../app.css';
 
 class NavHeader extends Component {
 
@@ -24,14 +24,14 @@ console.log(this.state.input)
 render() {
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Stream</Navbar.Brand>
+    <Navbar class="navbar bg-transparent p justify-content-center"  variant="light" expand="lg" style={{color:'white'}}>
+      <Navbar.Brand href="#home"style={{color:'white'}}>Stream</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/streams/show">All streams</Nav.Link>
-          <NavDropdown title="My streams" id="basic-nav-dropdown">
+        <Nav className="mr-auto" >
+          <Nav.Link as={Link} to="/" style={{color:'white'}}>Home</Nav.Link>
+          <Nav.Link as={Link} to="/streams/show" style={{color:'white'}}>All streams</Nav.Link>
+          <NavDropdown style={{color:'white'}} title="My streams"  id="basic-nav-dropdown">
             <NavDropdown.Item as={Link} to="/streams/create">Create</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/streams/edit">Edit</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/streams/delete">Delete</NavDropdown.Item>

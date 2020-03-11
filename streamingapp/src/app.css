@@ -1,0 +1,27 @@
+body {
+    background-image: url("./mountain.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white !important;
+    font-family: 'Bellota Text';
+  
+}
+
+.jumbotron {
+    background: none
+}
+
+
+.dropdown-toggle{
+    color: white !important;
+}
+
+img {
+    height: 65vh;
+    opacity: 60%;
+}
+img:hover {
+    opacity: 90%;
+}

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap';
 
+import { FaGoogle } from 'react-icons/fa';
+
+
+
 class GoogleAuth extends Component {
 
     state = {
@@ -30,6 +34,16 @@ authChange = () =>{
 this.setState({
     isSignedIn: this.auth.isSignedIn.get()
 })
+}
+
+onSignIn = () =>{
+
+this.auth.signIn();
+
+}
+onSignOut = () => {
+
+this.auth.signOut();
 
 }
 
@@ -38,13 +52,13 @@ this.setState({
             return <div></div>
         }
         else if (this.state.isSignedIn === true) {
-            return <div> <h3> is signed in</h3> </div>;
+            return <div> <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignOut}>  <FaGoogle style={{marginRight:'5px'}}/> Sign Out </Button> </div>;
         }
         else {
             return(
             <div> 
-                <h5> not logged in</h5>
-                <Button> Log in with google </Button>
+               
+                <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignIn}>  <FaGoogle style={{marginRight:'5px'}}/> Log in with google </Button>
             </div>
             )
             
