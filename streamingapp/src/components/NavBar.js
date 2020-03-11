@@ -24,7 +24,7 @@ console.log(this.state.input)
 render() {
 
   return (
-    <Navbar class="navbar bg-transparent p justify-content-center"  variant="light" expand="lg" style={{color:'white'}}>
+    <Navbar className="navbar bg-dark  justify-content-center"  variant="light" expand="lg" style={{color:'white'}}>
       <Navbar.Brand href="#home"style={{color:'white'}}>Stream</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
