@@ -1,15 +1,15 @@
 export const setAuthSignIn = () => {
+return{
+type: 'SIGN_IN'
 
-type: 'SIGN_IN';
-action.payload
-
+}
 
 }
 
 export const setAuthSignOut = () => {
+return {
+    type: 'SIGN_OUT'
 
-    type: 'SIGN_OUT';
-    action.payload
-    
+}
     
     }

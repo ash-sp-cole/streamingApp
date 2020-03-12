@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import {Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import { FaGoogle } from 'react-icons/fa';
-
+import {setAuthSignIn ,setAuthSignOut} from '../Actions';
 
 
 class GoogleAuth extends Component {
 
-    state = {
-        isSignedIn: null
-    }
+
 
     componentDidMount() {
 
@@ -19,21 +17,22 @@ class GoogleAuth extends Component {
                 scope: 'email'
             }).then(() => {
                 this.auth = window.gapi.auth2.getAuthInstance();
-                this.setState({
-                    isSignedIn: this.auth.isSignedIn.get()
-                })
+                this.authChange(this.auth.isSignedIn.get())
                 this.auth.isSignedIn.listen(this.authChange);
-                console.log(this.state.isSignedIn)
+                console.log(this.props.isSignedIn)
             })
 
         })
     }
 
    
-authChange = () =>{
-this.setState({
-    isSignedIn: this.auth.isSignedIn.get()
-})
+authChange = (isSignedIn) =>{
+if (isSignedIn===true){
+    this.props.setAuthSignIn()
+}
+else {
+    this.props.setAuthSignOut()
+}
 }
 
 onSignIn = () =>{
@@ -48,10 +47,10 @@ this.auth.signOut();
 }
 
     renderAuthButton() {
-        if (this.state.isSignedIn === null) {
+        if (this.props.isSignedIn === null) {
             return <div></div>
         }
-        else if (this.state.isSignedIn === true) {
+        else if (this.props.isSignedIn  === true) {
             return <div> <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignOut}>  <FaGoogle style={{marginRight:'5px'}}/> Sign Out </Button> </div>;
         }
         else {
@@ -67,7 +66,7 @@ this.auth.signOut();
 }
 
     render() {
-        console.log(this.props.propIsSignedIn)
+        console.log(this.props.isSignedIn)
         return (
             <div>
                 <h3>{this.renderAuthButton()}</h3>
@@ -82,21 +81,12 @@ this.auth.signOut();
 
  const mapStatetoProps =  (state) => {
 return {
-propIsSignedIn: state.signedIn
-}
+isSignedIn: state.auth.isSignedIn
 
 }
 
-const mapDispatchToProps = () =>{
-    return{
-        
 
-    }
+
+
 }
-
-
-
-
-
-
-export default connect(mapStatetoProps,mapDispatchToProps) (GoogleAuth);
+export default connect(mapStatetoProps,{setAuthSignIn ,setAuthSignOut}) (GoogleAuth);
