@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Jumbotron, Button , Carousel} from 'react-bootstrap';
 
+import GoogleAuth from '../GoogleAuth';
+
 class Home extends Component{
 render(){
     return(
@@ -52,7 +54,7 @@ render(){
     extra attention to featured content or information.
   </p>
   <p>
-    <Button variant="primary">Sign Up / Log in</Button>
+   <GoogleAuth/>
   </p>
             </Jumbotron>
 

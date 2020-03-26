@@ -20,15 +20,17 @@ class GoogleAuth extends Component {
                 this.authChange(this.auth.isSignedIn.get())
                 this.auth.isSignedIn.listen(this.authChange);
                 console.log(this.props.isSignedIn)
+              
             })
 
         })
     }
-
+    // gapi.auth2.getAuthInstance().currentUser.je.Qt.Ad
    
 authChange = (isSignedIn) =>{
 if (isSignedIn===true){
     this.props.setAuthSignIn(this.auth.currentUser.get().getId())
+    console.log(this.auth.currentUser.je.Qt.Ad, 'user info')
 }
 else {
     this.props.setAuthSignOut()
@@ -51,7 +53,9 @@ this.auth.signOut();
             return <div></div>
         }
         else if (this.props.isSignedIn  === true) {
-            return <div> <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignOut}>  <FaGoogle style={{marginRight:'5px'}}/> Sign Out </Button> </div>;
+            return <div> <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignOut}>  <FaGoogle style={{marginRight:'5px'}}/> Sign Out </Button> 
+            </div>;
+            
         }
         else {
             return(
