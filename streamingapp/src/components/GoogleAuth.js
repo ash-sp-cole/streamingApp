@@ -47,7 +47,6 @@ onSignOut = () => {
 this.auth.signOut();
 
 }
-
     renderAuthButton() {
         if (this.props.isSignedIn === null) {
             return <div></div>
@@ -89,8 +88,6 @@ isSignedIn: state.auth.signedIn,
 userId: state.auth.userId
 
 }
-
-
 
 
 }
