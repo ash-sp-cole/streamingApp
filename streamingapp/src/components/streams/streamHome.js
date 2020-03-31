@@ -46,12 +46,10 @@ render(){
   </Carousel.Item>
 </Carousel>
 
-
             <Jumbotron >
                 <h2> Welcome to Stream Snipe </h2>
                 <p>
-    This is a simple hero unit, a simple jumbotron-style component for calling
-    extra attention to featured content or information.
+    This is a simple hero unit, 
   </p>
   <p>
    <GoogleAuth/>
