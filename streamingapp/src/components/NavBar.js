@@ -25,7 +25,7 @@ render() {
 
   return (
     <Navbar className="navbar bg-dark  justify-content-center"  variant="light" expand="lg" style={{color:'white'}}>
-      <Navbar.Brand href="#home"style={{color:'white'}}>Stream</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/"style={{color:'white'}}>Stream</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto" >

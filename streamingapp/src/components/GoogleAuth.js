@@ -30,7 +30,7 @@ class GoogleAuth extends Component {
 authChange = (isSignedIn) =>{
 if (isSignedIn===true){
     this.props.setAuthSignIn(this.auth.currentUser.get().getId())
-    console.log(this.auth.currentUser.je.Qt.Ad, 'user info')
+    // console.log(this.auth.currentUser.je.Qt.Ad, 'user info')
 }
 else {
     this.props.setAuthSignOut()
@@ -49,19 +49,19 @@ this.auth.signOut();
 }
     renderAuthButton() {
         if (this.props.isSignedIn === null) {
-            return <div></div>
+            return 
         }
         else if (this.props.isSignedIn  === true) {
-            return <div> <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignOut}>  <FaGoogle style={{marginRight:'5px'}}/> Sign Out </Button> 
-            </div>;
+            return  <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignOut}>  <FaGoogle style={{marginRight:'5px'}}/> Sign Out </Button> 
+            
             
         }
         else {
             return(
-            <div> 
+            
                
                 <Button  variant="outline-light" style={{marginLeft:'10px'}} onClick={this.onSignIn}>  <FaGoogle style={{marginRight:'5px'}}/> Log in with google </Button>
-            </div>
+           
             )
             
     }
@@ -71,10 +71,10 @@ this.auth.signOut();
     render() {
         console.log(this.props.isSignedIn, "state rend" , this.props.userId)
         return (
-            <div>
+          
                 <h3>{this.renderAuthButton()}</h3>
 
-            </div>
+          
 
         )
     }

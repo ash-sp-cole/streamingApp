@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button , Carousel} from 'react-bootstrap';
+import { Jumbotron, Carousel} from 'react-bootstrap';
 
 import GoogleAuth from '../GoogleAuth';
 
@@ -23,7 +23,7 @@ render(){
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg"
+      src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
       alt="Third slide"
     />
 

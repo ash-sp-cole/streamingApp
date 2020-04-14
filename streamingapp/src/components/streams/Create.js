@@ -1,12 +1,41 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-class Create extends Component{
-render(){
-    return(
-        <div> <h3> create page </h3></div>
-    )
+class Create extends Component {
+renderInput(formProps){
+    console.log(formProps);
+    
+       return (
+    
+       <div>
+    <input type='text'/>
+        </div>
+       )
+    }
+
+
+    render() {
+
+        return (
+
+            <div>
+
+                <h3> create page </h3>
+
+                <form>
+                    <Field name ="title" component={this.renderInput}/>
+                    <Field name ="description" component={this.renderInput}/>
+                    
+                </form>
+
+
+            </div>
+
+        )
+    }
+
 }
 
-}
-
-export default Create;
+export default reduxForm({
+    form: 'createForm'
+})(Create);

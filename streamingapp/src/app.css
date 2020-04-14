@@ -22,8 +22,4 @@ img {
     height: 65vh;
     opacity: 60%;
 }
-#hover{opacity: 60%;}
-#hover:hover{opacity:90%}
-img:hover {
-    opacity: 90%;
-}
+#hover{opacity: 90%;}
