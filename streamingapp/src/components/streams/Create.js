@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 class Create extends Component {
-renderInput(formProps){
-    console.log(formProps);
+renderInput(input){
+    
     
        return (
     
        <div>
-    <input type='text'/>
+    <input type='text'  {...input}      />
         </div>
        )
     }
