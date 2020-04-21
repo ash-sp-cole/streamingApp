@@ -4,15 +4,15 @@ import { Field, reduxForm } from 'redux-form';
 import { Form, Button, Jumbotron } from 'react-bootstrap';
 
 class Create extends Component {
-    renderInput({ input, label }) {
+    renderInput({ input, label, meta }) {
 
-
+       
         return (
 
                 <Form.Group>
                     <Form.Label>{label}</Form.Label>
                     <Form.Control placeholder="...."{...input}/>
-
+              
                 </Form.Group>
 
         )
@@ -24,7 +24,7 @@ class Create extends Component {
     }
 
     render() {
-
+      
         return (
 
             <div>
@@ -50,6 +50,21 @@ class Create extends Component {
 
 }
 
+const validate = (formValues)=>{
+
+    const errors={};
+
+    if (!formValues.title) {
+        errors.title= " Please enter a title"    
+    }
+    if (!formValues.description) {
+        errors.description= " Please enter a description"    
+    }
+    
+return errors;
+}
+
 export default reduxForm({
-    form: 'createForm'
+    form: 'createForm',
+    validate
 })(Create);
