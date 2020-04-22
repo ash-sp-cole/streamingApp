@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import {connect} from 'react-redux';
+import {createStream} from '../../Actions/index';
+
 
 import { Form, Button, Jumbotron } from 'react-bootstrap';
 
@@ -18,9 +21,14 @@ class Create extends Component {
         )
     }
 
-    onSubmit(formValues){
+   onSubmit = (formValues) => {
       
         console.log(formValues, 'form value / on submit ');
+
+        this.props.createStream(formValues);
+
+
+
     }
 
     render() {
@@ -64,7 +72,9 @@ const validate = (formValues)=>{
 return errors;
 }
 
-export default reduxForm({
+const formWrapped = reduxForm({
     form: 'createForm',
     validate
 })(Create);
+
+export default connect (null,{createStream}) (formWrapped);
