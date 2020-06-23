@@ -11,10 +11,10 @@ import NavHeader from './components/NavBar';
 import "./app.css";
 const App = () => {
   
-  
+ 
   return (
    <div>
-   
+  
      <BrowserRouter>
      <NavHeader/>
      <div>
@@ -29,5 +29,4 @@ const App = () => {
    </div>
   );
 }
-
 export default App;
